@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <CustomCommands>
+      <CustomCommands>
+        <Command>
+          <type>BeforeBuild</type>
+          <command>npm --prefix ./client-app run build</command>
+          <workingdir>${ProjectDir}</workingdir>
+          <externalConsole>True</externalConsole>
+        </Command>
+      </CustomCommands>
+    </CustomCommands>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="client-app\src\assets\" />
+    <Folder Include="client-app\src\components\games\" />
+    <Folder Include="client-app\src\components\info\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="wwwroot\index.html" />
+    <None Include="wwwroot\static\css\app.71108cc83fbebbfbbafe55eedf5f60fb.css" />
+    <None Include="wwwroot\static\css\app.71108cc83fbebbfbbafe55eedf5f60fb.css.map" />
+    <None Include="wwwroot\static\js\app.a9c5dc684745d47798a4.js" />
+    <None Include="wwwroot\static\js\app.a9c5dc684745d47798a4.js.map" />
+    <None Include="wwwroot\static\js\manifest.2ae2e69a05c33dfc65f8.js" />
+    <None Include="wwwroot\static\js\manifest.2ae2e69a05c33dfc65f8.js.map" />
+    <None Include="wwwroot\static\js\vendor.dc62044ed52e4138d583.js" />
+    <None Include="wwwroot\static\js\vendor.dc62044ed52e4138d583.js.map" />
+  </ItemGroup>
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="npm --prefix &quot;$(ProjectDir)client-app&quot; run build" />
+  </Target>
+</Project>
