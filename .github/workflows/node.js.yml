@@ -25,7 +25,6 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - run: npm install chalk
-    - run: npm install each-async
-    - run: npm install indent-string
+    - run: npm ci
     - run: npm --prefix ./Test/client-app run build
+    - run: npm test
