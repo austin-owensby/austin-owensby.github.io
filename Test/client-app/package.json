@@ -9,7 +9,7 @@
     "start": "npm run watch",
     "lint": "eslint --ext .js,.vue src",
     "build": "node build/build.js",
-	"predeploy": "npm --prefix ./Test/client-app run build"
+	"predeploy": "npm --prefix ./Test/client-app run build",
 	"deploy": "gh-pages -d docs"
   },
   "dependencies": {
