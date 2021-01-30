@@ -27,3 +27,6 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm --prefix ./Test/client-app ci
     - run: npm --prefix ./Test/client-app run build
+    - name: Deploy to GitHub Pages
+      uses: JamesIves/github-pages-deploy-action@3.7.1
+
