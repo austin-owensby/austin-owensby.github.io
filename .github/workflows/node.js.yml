@@ -27,10 +27,4 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm --prefix ./Test/client-app ci
     - run: npm --prefix ./Test/client-app run build
-    - name: Deploy to GitHub Pages
-      uses: JamesIves/github-pages-deploy-action@3.7.1
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: main # The branch the action should deploy to.
-          FOLDER: docs # The folder the action should deploy.
-          CLEAN: true # Automatically remove deleted files from the deploy branch
 
