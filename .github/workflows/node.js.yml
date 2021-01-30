@@ -26,5 +26,6 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm --prefix ./Test/client-app ci
-    - run: npm --prefix ./Test/client-app run build
+    - run: npm --prefix ./Test/client-app run build,
+    - run: npm run deploy
 
