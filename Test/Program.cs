@@ -14,7 +14,7 @@ namespace Test
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    webBuilder.UseStartup<Startup>().UseWebRoot("docs");
+                    webBuilder.UseStartup<Startup>().UseWebRoot("../docs");
                 });
     }
 }

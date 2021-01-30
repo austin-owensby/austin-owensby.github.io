@@ -1,6 +1,6 @@
 <template>
     <div id="game">
-        Games
+        Gamess
         <template v-if="index == 0">
             <template v-if="subIndex == 0">
                 <Intro></Intro>
